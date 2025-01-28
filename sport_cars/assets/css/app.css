@@ -1,0 +1,102 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom CSS for LiveView course */
+
+body {
+  background-image: url('/images/cars.jpg'); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Makes the background stay fixed when scrolling */
+}
+
+  
+  nav {
+    @apply py-3 px-6 flex justify-end;
+  }
+  
+  nav ul {
+    @apply flex items-center justify-between gap-4;
+  }
+  
+  nav ul li {
+    @apply text-base text-slate-700;
+  }
+  
+  nav ul li a:hover {
+    @apply underline;
+  }
+  
+  main {
+    @apply max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8;
+  }
+  
+  h1 {
+    @apply text-center text-slate-900 font-extrabold text-3xl;
+  }
+  
+  h2 {
+    @apply text-center text-slate-800 font-extrabold text-2xl;
+  }
+  
+  h3 {
+    @apply text-center text-slate-800 font-bold text-xl;
+  }
+
+
+  #main-container {
+    @apply mt-8 max-w-3xl mx-auto mb-6;
+  }
+  #main-container h2 {
+    @apply text-center text-2xl text-slate-500 mb-8;
+  }
+  #main-container .car {
+    @apply mt-2 border border-slate-300 bg-white rounded px-6 py-4 w-full text-lg h-20 grid grid-cols-3 items-center relative;
+  }
+  #main-container .car:hover .delete {
+    display: block;
+  }
+  #main-container .car .delete {
+    @apply absolute top-1 right-1 hidden cursor-pointer text-sm;
+  }
+  #main-container .car .delete svg,
+  #main-container .car .delete .hero-trash-solid {
+    @apply w-4 h-4 text-slate-400;
+  }
+  #main-container .car .brand {
+    @apply text-orange-700 font-bold overflow-auto;
+    justify-self: start;
+  }
+  #main-container .car .model {
+    @apply flex items-center font-medium text-slate-500;
+    justify-self: center;
+  }
+
+ 
+  #main-container form {
+    @apply px-6 py-4 border-solid border bg-white border-slate-400 mb-8 flex items-baseline justify-around bg-white/40 backdrop-blur-lg shadow-lg;
+  }
+ 
+  #main-container form input[type="text"],
+  #main-container form input[type="tel"] {
+    @apply w-full appearance-none px-3 py-2 border border-slate-300 rounded-md transition duration-150 ease-in-out text-xl placeholder-slate-400 mt-0;
+  }
+
+  #main-container form input[type="text"]:focus,
+  #main-container form input[type="tel"]:focus {
+    @apply outline-none border-orange-700 ring ring-orange-300;
+  }
+  #main-container form button {
+    @apply py-2 px-4 border border-transparent font-medium rounded-md text-white bg-orange-500 transition duration-150 ease-in-out outline-none flex-initial text-lg w-28 hover:bg-orange-600 focus:outline-none focus:border-yellow-700 focus:ring;
+  }
+
+  #main-container .car .icon-lower {
+    @apply absolute bottom-1 right-1 cursor-pointer text-sm text-slate-400;
+  }
+  
+  #main-container .car:hover .icon-lower {
+    @apply text-orange-500;
+  }
+  
