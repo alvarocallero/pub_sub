@@ -34,8 +34,19 @@ body {
   }
   
   h1 {
-    @apply text-center text-slate-900 font-extrabold text-3xl;
+    @apply text-center text-white font-extrabold text-5xl tracking-wide mt-8 mb-6;
+    letter-spacing: 0.1em; /* Slightly increases spacing between letters */
+    padding: 0.5rem 1rem; /* Adds spacing inside the background */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(8px); /* Adds a blur effect to the background */
+    border-radius: 0.5rem; /* Rounds the edges of the background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+    max-width: 100%; /* Ensures it doesn't exceed container width */
+    width: calc(100% - 10rem); /* Adjust width to align with other elements, leaving some padding */
+    margin: 0 auto; /* Centers the h1 horizontally */
   }
+  
+  
   
   h2 {
     @apply text-center text-slate-800 font-extrabold text-2xl;
@@ -45,35 +56,60 @@ body {
     @apply text-center text-slate-800 font-bold text-xl;
   }
 
-
   #main-container {
     @apply mt-8 max-w-3xl mx-auto mb-6;
   }
+
   #main-container h2 {
     @apply text-center text-2xl text-slate-500 mb-8;
   }
+
   #main-container .car {
     @apply mt-2 border border-slate-300 bg-white rounded px-6 py-4 w-full text-lg h-20 grid grid-cols-3 items-center relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adds smooth scaling and shadow transitions */
   }
+  
+  #main-container .car:hover {
+    transform: scale(1.01); /* Slightly increases the size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow for depth */
+  }
+  
+
   #main-container .car:hover .delete {
     display: block;
   }
+
   #main-container .car .delete {
     @apply absolute top-1 right-1 hidden cursor-pointer text-sm;
   }
+
   #main-container .car .delete svg,
   #main-container .car .delete .hero-trash-solid {
     @apply w-4 h-4 text-slate-400;
   }
+
   #main-container .car .brand {
     @apply text-orange-700 font-bold overflow-auto;
     justify-self: start;
   }
+
   #main-container .car .model {
     @apply flex items-center font-medium text-slate-500;
     justify-self: center;
   }
 
+  #main-container .car .status {
+    @apply flex items-center font-medium text-slate-500;
+    justify-self: right;
+  }
+
+  #main-container .car .status button {
+    @apply bg-green-500 text-white w-28 font-medium py-2 px-4 rounded outline-none hover:bg-green-700 ;
+  }
+
+  #main-container .car.out {
+    @apply bg-slate-300;
+  }
  
   #main-container form {
     @apply px-6 py-4 border-solid border bg-white border-slate-400 mb-8 flex items-baseline justify-around bg-white/40 backdrop-blur-lg shadow-lg;
@@ -88,15 +124,18 @@ body {
   #main-container form input[type="tel"]:focus {
     @apply outline-none border-orange-700 ring ring-orange-300;
   }
+
   #main-container form button {
     @apply py-2 px-4 border border-transparent font-medium rounded-md text-white bg-orange-500 transition duration-150 ease-in-out outline-none flex-initial text-lg w-28 hover:bg-orange-600 focus:outline-none focus:border-yellow-700 focus:ring;
   }
 
   #main-container .car .icon-lower {
-    @apply absolute bottom-1 right-1 cursor-pointer text-sm text-slate-400;
+    @apply absolute bottom-1 right-1 hidden cursor-pointer text-sm text-slate-200;
   }
   
   #main-container .car:hover .icon-lower {
-    @apply text-orange-500;
+    @apply block text-orange-500; 
   }
+  
+
   

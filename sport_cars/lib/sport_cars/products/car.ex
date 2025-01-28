@@ -14,6 +14,6 @@ defmodule SportCars.Products.Car do
   def changeset(car, attrs) do
     car
     |> cast(attrs, [:brand, :model, :sold])
-    |> validate_required([:brand, :model, :sold])
+    |> validate_required([:brand, :model])
   end
 end

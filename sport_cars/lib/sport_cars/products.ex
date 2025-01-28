@@ -30,7 +30,7 @@ defmodule SportCars.Products do
 
   # CRUD functions
   def list_cars do
-    Repo.all(Car)
+    Repo.all(from c in Car, order_by: [desc: c.id])
   end
 
   def get_car!(id), do: Repo.get!(Car, id)

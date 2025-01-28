@@ -21,7 +21,7 @@ defmodule SportCarsWeb.CarLive do
 
   def render(assigns) do
     ~H"""
-    <h1>The garage</h1>
+    <h1>The Garage 🔧</h1>
     <div id="main-container">
       <.live_component module={CarFormComponent} id={:new} />
 
@@ -37,28 +37,39 @@ defmodule SportCarsWeb.CarLive do
 
   def car(assigns) do
     ~H"""
-    <div id={@id} class="car">
+    <div
+      class={"car #{if @car.sold, do: "out"}"}
+      id={@id}
+    >
       <div class="brand">
         {@car.brand}
       </div>
+
       <div class="model">
         {@car.model}
       </div>
+
       <div class="status">
         <.link
           class="delete"
           phx-click={
             JS.push("delete", value: %{id: @car.id})
             |> JS.hide(
-              to: "##{@id}",
-              transition: "ease duration-1000 scale-150"
+              to: "##{@id}"
             )
           }
           data-confirm="Are you sure?"
         >
           <.icon name="hero-trash-solid" />
         </.link>
-        
+
+        <button phx-click={
+          JS.push("toggle-status", value: %{id: @car.id})
+        }>
+          <%= if @car.sold,
+            do: "Sold",
+            else: "Available" %>
+        </button>
       </div>
     </div>
     """
