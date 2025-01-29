@@ -1,8 +1,7 @@
 # SportCars
 This project will focus on the following 2 points:
--Share state using PubSub across nodes connected through LibCluster. 
-
--Make real updates between a LiveView page and a LiveComponent, broadcasting messages from child to parent through PubSub.
+* Share state using PubSub across nodes connected through LibCluster. 
+* Make real updates between a LiveView page and a LiveComponent, broadcasting messages from child to parent through PubSub.
 
 
 To start your Phoenix server:
