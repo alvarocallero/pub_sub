@@ -1,4 +1,4 @@
-defmodule SportCars.Application do
+defmodule GenserverExample.Application do
   @moduledoc false
 
   use Application
@@ -19,21 +19,13 @@ defmodule SportCars.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      SportCarsWeb.Telemetry,
-      SportCars.Repo,
+      {Cluster.Supervisor, [@topologies, [name: GenserverExample.ClusterSupervisor]]},
+      # {Phoenix.PubSub, adapter: Phoenix.PubSub.Redis, node_name: "RedisRules", name: SportCars.PubSub},
       {Phoenix.PubSub, name: SportCars.PubSub},
-      SportCars.CarsCounterStore,
-      {Cluster.Supervisor, [@topologies, [name: SportCars.ClusterSupervisor]]},
-      SportCarsWeb.Endpoint
+      GenserverExample.CarsCounterStore
     ]
 
-    opts = [strategy: :one_for_one, name: SportCars.Supervisor]
+    opts = [strategy: :one_for_one, name: GenserverExample.Supervisor]
     Supervisor.start_link(children, opts)
-  end
-
-  @impl true
-  def config_change(changed, _new, removed) do
-    SportCarsWeb.Endpoint.config_change(changed, removed)
-    :ok
   end
 end

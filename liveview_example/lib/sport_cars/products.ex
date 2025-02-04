@@ -4,6 +4,7 @@ defmodule SportCars.Products do
   """
 
   import Ecto.Query, warn: false
+  require Logger
   alias SportCars.Repo
 
   alias SportCars.Products.Car
@@ -14,6 +15,7 @@ defmodule SportCars.Products do
   # Broadcast helpers
   def subscribe() do
     Phoenix.PubSub.subscribe(@pubsub, @topic)
+    Logger.info("Subscribed to topic #{@topic} !!!")
   end
 
   def broadcast({:ok, car}, tag) do

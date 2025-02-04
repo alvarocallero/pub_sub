@@ -12,8 +12,12 @@ defmodule SportCarsWeb.CarFormComponent do
   def render(assigns) do
     ~H"""
     <div>
-      <.form for={@form} phx-submit="save" phx-target={@myself} >
-        <.input field={@form[:brand]} placeholder="Brand" autocomplete="off" />
+      <.form for={@form} phx-submit="save" phx-target={@myself}>
+        <.input
+          field={@form[:brand]}
+          placeholder="Brand"
+          autocomplete="off"
+        />
         <.input
           field={@form[:model]}
           placeholder="Model"
@@ -31,10 +35,11 @@ defmodule SportCarsWeb.CarFormComponent do
     case Products.create_car(car_params) do
       {:ok, _car} ->
         changeset = Products.change_car(%Car{})
-        {:noreply, assign(socket, :form, to_form(changeset))}
+        IO.inspect(changeset, label: "changeset")
+        {:noreply, assign(socket, form: to_form(changeset))}
 
       {:error, changeset} ->
-        {:noreply, assign(socket, :form, to_form(changeset))}
+        {:noreply, assign(socket, form: to_form(changeset))}
     end
   end
 end

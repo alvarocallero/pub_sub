@@ -1,5 +1,4 @@
-defmodule SportCars.CarsCounterStore do
-
+defmodule GenserverExample.CarsCounterStore do
   @moduledoc """
   This GenServer module is responsible for storing the amount of cars by brand.
   """

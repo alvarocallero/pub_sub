@@ -37,10 +37,7 @@ defmodule SportCarsWeb.CarLive do
 
   def car(assigns) do
     ~H"""
-    <div
-      class={"car #{if @car.sold, do: "out"}"}
-      id={@id}
-    >
+    <div class={"car #{if @car.sold, do: "out"}"} id={@id}>
       <div class="brand">
         {@car.brand}
       </div>
@@ -54,21 +51,17 @@ defmodule SportCarsWeb.CarLive do
           class="delete"
           phx-click={
             JS.push("delete", value: %{id: @car.id})
-            |> JS.hide(
-              to: "##{@id}"
-            )
+            |> JS.hide(to: "##{@id}")
           }
           data-confirm="Are you sure?"
         >
           <.icon name="hero-trash-solid" />
         </.link>
 
-        <button phx-click={
-          JS.push("toggle-status", value: %{id: @car.id})
-        }>
-          <%= if @car.sold,
+        <button phx-click={JS.push("toggle-status", value: %{id: @car.id})}>
+          {if @car.sold,
             do: "Sold",
-            else: "Available" %>
+            else: "Available"}
         </button>
       </div>
     </div>

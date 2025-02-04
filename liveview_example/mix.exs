@@ -5,7 +5,7 @@ defmodule SportCars.MixProject do
     [
       app: :sport_cars,
       version: "0.1.0",
-      elixir: "~> 1.18.2-otp-27",
+      elixir: "~> 1.17.2-otp-26",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -22,6 +22,7 @@ defmodule SportCars.MixProject do
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
+
   defp deps do
     [
       {:phoenix, "~> 1.7.18"},
@@ -49,8 +50,7 @@ defmodule SportCars.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"},
-      {:libcluster, "~> 3.5"}
+      {:bandit, "~> 1.5"}
     ]
   end
 
