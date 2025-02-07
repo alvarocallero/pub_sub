@@ -6,6 +6,6 @@ This repository demonstrates how to leverage Phoenix.PubSub for efficient messag
 Share state across distributed nodes using Phoenix.PubSub and GenServer.
 Nodes automatically connect via LibCluster, enabling seamless real-time state synchronization.
 
-- `livew_example`:
+- `liveview_example`:
 Enable real-time communication between a LiveView page and a LiveComponent.
 Child components broadcast updates to the parent via Phoenix.PubSub, ensuring state consistency.
