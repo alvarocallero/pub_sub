@@ -25,7 +25,7 @@ defmodule GenserverExample.CarsCounterStore do
     GenServer.cast(__MODULE__, {:increment_brand_counter, brand_name})
   end
 
-  # GenServer callbacks | Private API functions
+  # GenServer callbacks | Internal function
   def init(state) do
     {:ok, state, {:continue, :setup_pubsub}}
   end

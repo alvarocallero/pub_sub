@@ -15,7 +15,7 @@ defmodule SportCars.Products do
   # Broadcast helpers
   def subscribe() do
     Phoenix.PubSub.subscribe(@pubsub, @topic)
-    Logger.info("Subscribed to topic #{@topic} !!!")
+    Logger.info("Subscribed to topic #{@topic} 💪")
   end
 
   def broadcast({:ok, car}, tag) do

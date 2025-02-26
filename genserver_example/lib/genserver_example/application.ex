@@ -20,8 +20,8 @@ defmodule GenserverExample.Application do
   def start(_type, _args) do
     children = [
       {Cluster.Supervisor, [@topologies, [name: GenserverExample.ClusterSupervisor]]},
-      {Phoenix.PubSub, adapter: Phoenix.PubSub.Redis, node_name: node(), name: SportCars.PubSub},
-      # {Phoenix.PubSub, name: SportCars.PubSub},
+      # {Phoenix.PubSub, adapter: Phoenix.PubSub.Redis, node_name: node(), name: SportCars.PubSub},
+      {Phoenix.PubSub, name: SportCars.PubSub},
       GenserverExample.CarsCounterStore
     ]
 

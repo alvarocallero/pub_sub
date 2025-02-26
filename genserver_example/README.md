@@ -1,21 +1,9 @@
 # GenserverExample
+This is a simple Elixir project to showcase how we can broadcast messages through Phoenix.PubSub between GenServer nodes connected through LibCluster.
 
-**TODO: Add description**
+To run this app, follow these steps:
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `showcasing_pub_sub` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:showcasing_pub_sub, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/showcasing_pub_sub>.
-
+  * Run `iex --sname node1@localhost -S mix` in one terminal, and `iex --sname node2@localhost -S mix` in another one.
+  * In the iex console of node1, start broadcasting messages executing `GenserverExample.CarsCounterStore.increment_brand_counter("Ferrari")` several times.
+  * In the iex console of node2, check for updates in the state through `GenserverExample.CarsCounterStore.get_brand_counter("Ferrari")`
+  * If you want to try the Redis adapter, uncomment it in the `application.ex` file, have a Redis server up and running, and repeat steps #1 and #2.

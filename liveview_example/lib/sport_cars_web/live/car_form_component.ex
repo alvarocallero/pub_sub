@@ -35,7 +35,6 @@ defmodule SportCarsWeb.CarFormComponent do
     case Products.create_car(car_params) do
       {:ok, _car} ->
         changeset = Products.change_car(%Car{})
-        IO.inspect(changeset, label: "changeset")
         {:noreply, assign(socket, form: to_form(changeset))}
 
       {:error, changeset} ->
