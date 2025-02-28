@@ -34,18 +34,23 @@ body {
   }
   
   h1 {
-    @apply text-center text-white font-extrabold text-5xl tracking-wide mt-8 mb-6;
+    @apply text-center font-extrabold text-5xl tracking-wide mt-8 mb-6 text-white;
     letter-spacing: 0.1em; /* Slightly increases spacing between letters */
-    padding: 0.5rem 1rem; /* Adds spacing inside the background */
-    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(8px); /* Adds a blur effect to the background */
-    border-radius: 0.5rem; /* Rounds the edges of the background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
-    max-width: 100%; /* Ensures it doesn't exceed container width */
-    width: calc(100% - 10rem); /* Adjust width to align with other elements, leaving some padding */
+    padding: 1rem 1.5rem; /* Adds spacing inside the background */
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.4), rgba(255, 165, 0, 0.4)); /* More opaque orange gradient */
+    backdrop-filter: blur(4px); /* Slight blur for a soft glass effect */
+    border-radius: 0.75rem; /* Rounds the edges */
+    box-shadow: 0 3px 6px rgba(255, 102, 0, 0.15); /* Softer and more subtle glow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Improves text readability */
+    max-width: 90%; /* Keeps it within a readable width */
+    width: fit-content; /* Adapts to text width */
     margin: 0 auto; /* Centers the h1 horizontally */
   }
+
   
+  
+  
+
   
   
   h2 {
@@ -74,7 +79,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow for depth */
   }
   
-
   #main-container .car:hover .delete {
     display: block;
   }
@@ -115,13 +119,11 @@ body {
     @apply px-6 py-4 border-solid border bg-white border-slate-400 mb-8 flex items-baseline justify-around bg-white/40 backdrop-blur-lg shadow-lg;
   }
  
-  #main-container form input[type="text"],
-  #main-container form input[type="tel"] {
-    @apply w-full appearance-none px-3 py-2 border border-slate-300 rounded-md transition duration-150 ease-in-out text-xl placeholder-slate-400 mt-0;
+  #main-container form input[type="text"]{
+    @apply w-48 appearance-none px-3 py-2 border border-slate-300 rounded-md transition duration-150 ease-in-out text-xl placeholder-slate-400 mt-0;
   }
 
-  #main-container form input[type="text"]:focus,
-  #main-container form input[type="tel"]:focus {
+  #main-container form input[type="text"]:focus{
     @apply outline-none border-orange-700 ring ring-orange-300;
   }
 

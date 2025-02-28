@@ -53,7 +53,6 @@ defmodule SportCarsWeb.CarLive do
             JS.push("delete", value: %{id: @car.id})
             |> JS.hide(to: "##{@id}")
           }
-          data-confirm="Are you sure?"
         >
           <.icon name="hero-trash-solid" />
         </.link>
