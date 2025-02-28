@@ -21,7 +21,7 @@ defmodule SportCarsWeb.CarLive do
 
   def render(assigns) do
     ~H"""
-    <h1>The Garage 🔧</h1>
+    <h1>🔮Beam Garage 🔧</h1>
     <div id="main-container">
       <.live_component module={CarFormComponent} id={:new} />
 
