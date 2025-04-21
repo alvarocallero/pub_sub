@@ -9,3 +9,5 @@ Nodes automatically connect via LibCluster, enabling seamless real-time state sy
 - `liveview_example`:
 Enable real-time communication between a LiveView page and a LiveComponent.
 Child components broadcast updates to the parent via Phoenix.PubSub, ensuring state consistency.
+
+- Test
